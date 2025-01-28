@@ -1,4 +1,4 @@
-name: umbou
+name: grah
 
 on:
   workflow_dispatch:
