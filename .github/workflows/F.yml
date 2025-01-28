@@ -42,7 +42,7 @@ jobs:
         name: app
         path: ${{steps.sign_app.outputs.signedReleaseFile}}
     - name: Upload files to Telegram
-      uses: xz-dev/TelegramFileUploader@v1
+      uses: xz-dev/TelegramFileUploader@v1.1.1
       with:
         to-who: 'rickdtc'
         message: 'Here are your files!'
