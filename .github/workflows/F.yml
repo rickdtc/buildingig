@@ -41,4 +41,13 @@ jobs:
       with:
         name: app
         path: ${{steps.sign_app.outputs.signedReleaseFile}}
-  
+    - name: Upload files to Telegram
+      uses: xz-dev/TelegramFileUploader@v1
+      with:
+        to-who: 'rickdtc'
+        message: 'Here are your files!'
+        files: ${{steps.sign_app.outputs.signedReleaseFile}}
+      env:
+        API_ID: ${{ secrets.API }}
+        API_HASH: ${{ secrets.APH }}
+        BOT_TOKEN: ${{ secrets.BT }}
